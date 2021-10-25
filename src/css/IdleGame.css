@@ -1,0 +1,12 @@
+.GameWindow {
+    background: white;
+    margin: auto;
+    padding-bottom: 0.25em;
+    text-align: center;
+    width: fit-content;
+}
+
+.building {
+    margin: 1em;
+    border: 1px solid black;
+}

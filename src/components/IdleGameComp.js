@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../css/IdleGame.css';
-import Buildingcomp from './Buildingcomp';
+import Buildingcomp from './BuildingComp';
 
 function numberWithCommas (x) {
     // Add commas to big numbers

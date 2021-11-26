@@ -1,13 +1,15 @@
 import './css/App.css';
-import React from 'react';
+import React, {useState} from 'react';
 import IdleGameComp from './components/IdleGameComp';
 import CV from './components/CV';
 
-function App() {
+function App () {
+  const [gameState, setGameState] = useState(false);
   return (
-    <div>
+    <div className="App">
       <CV />
-      <IdleGameComp />
+      <button onClick={() => setGameState(!gameState)}>{gameState ? "Hide" : "Show"} idle game</button>
+      {gameState ? <IdleGameComp /> : <div></div>}
     </div>
   );
 }

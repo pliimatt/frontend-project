@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-function toggleComp(id, setter) {
+function toggleComp (id, setter) {
     if (document.getElementById(id).style.display === "block") {
         document.getElementById(id).style.display = "none";
         setter("Show");
@@ -10,13 +10,7 @@ function toggleComp(id, setter) {
     }
 }
 
-function ToggleBtn({ id, text, setter }) {
-    return (
-        <button className={"ToggleBtn"} onClick={() => toggleComp(id, setter)}>{text}</button>
-    )
-}
-
-function ListItem(education) {
+function ListItem (education) {
     return (
         <div className={"ListItem"}>
             <h2>{education.title}</h2>
@@ -29,7 +23,7 @@ function ListItem(education) {
     )
 }
 
-function ListCompInner({ id, items }) {
+function ListCompInner ({id, items}) {
     return (
         <div id={id}>
             <ul>
@@ -39,17 +33,17 @@ function ListCompInner({ id, items }) {
     )
 }
 
-function ListCompMiddle({ id, naming, itemList }) {
+function ListCompMiddle ({id, naming, itemList}) {
     const [CompState, setCompState] = useState("Show");
     return (
         <div>
-            <ToggleBtn id={id} text={CompState + " " + naming} setter={setCompState} />
+            <button className={"ToggleBtn"} onClick={() => toggleComp(id, setCompState)}>{CompState + " " + naming}</button>
             <ListCompInner id={id} items={itemList.map(e => ListItem(e))} />
         </div>
     )
 }
 
-function ListCompOuter({ education, jobs, its }) {
+function ListCompOuter ({education, jobs, its}) {
     return (
         <div id={"ListComp"}>
             <ListCompMiddle id={"EduId"} naming={"education"} itemList={education} />

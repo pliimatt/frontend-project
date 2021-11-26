@@ -12,7 +12,7 @@ const pInfo = {
 }
 const mailAddr = "mailto:petri.liimatta95@gmail.com?subject=Job%offer"
 const covLetterText = "I am a recent graduate form the University of Oulu with M.Sc. focusing on theoretical physics. My Pro Gradu -thesis dealt with a topic close to quantum computers and I have completed university courses regarding quantum computation, physics, mathematics and programming."
-const motivText = "I would be interested to work with React in a full stack project or in data analysis. My background on React includes the course Full Stack Open 2018 from Univeristy of Helsinki and some independent projects."
+const motivText = "I would be interested to work with React in a full stack project or in data analysis. My background on React includes the course Full Stack Open 2018 from Univeristy of Helsinki, full stack course with Opiframe and some independent projects."
 const eduList = [
     {
         title: "University of Oulu, M.Sc.",
@@ -54,11 +54,11 @@ const itList = [
     },
     {
         title: "C/C++",
-        desc: "Intermediate"
+        desc: "Basics Plus"
     },
     {
         title: "Java",
-        desc: "Basics"
+        desc: "Basics Plus"
     },
     {
         title: "HTML/CSS/Javascript",
@@ -78,18 +78,18 @@ const itList = [
     },
 ]
 
-function hideElement() {
+function hideElement () {
     document.getElementById("grid").style.display = "none";
     document.getElementById("EnterBtn").style.display = "block";
 }
 
-function showElement() {
+function showElement () {
     document.getElementById("grid").style.display = "grid";
     document.getElementById("EnterBtn").style.display = "none";
 }
 
-export default function CV() {
-    return <div className="App">
+export default function CV () {
+    return <div>
         <PersonalInfoPanel info={pInfo} />
         <button id="EnterBtn" onClick={() => (showElement())}>Show cover letter</button>
         <CovLetterComp onClick={hideElement} addr={mailAddr} covLetterText={covLetterText} motivText={motivText} />
